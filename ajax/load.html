@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <style>
+    .blue{
+      color: blue;
+    }
+
+    body{
+      font-size: 150%;
+    }
+
+    .nav {
+  list-style-type: none;
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+
+  </style>
+</head>
+<body> 
+  
+<form> 
+
+	<h1> Personal Details </h1>
+    
+  <div class="input1">
+  Username:<br> 
+  <input type="text" name="username"> 
+  </div>
+
+  <br> 
+
+  <div class="input2">
+  Email id:<br> 
+  <input type="text" name="email_id"> 
+  </div>
+
+  <br>
+
+  <div class="input3">
+  Mobile:<br> 
+  <input type="number" name="mobile"> 
+  </div>
+
+  <br>
+
+  <div class="input4">
+  Address:<br> 
+  <textarea type="text" name="address"></textarea> 
+  </div>
+
+  <br>
+
+  <button>Submit</button>
+
+  <p>jQuery is a JavaScript Library.</p>
+
+<p>jQuery greatly simplifies JavaScript programming.</p>
+
+<p>jQuery is easy to learn.</p>
+
+<!--
+<ul class="nav">
+  <div class="box1">
+    A:
+    <input type="number" name="A"> 
+  </div>
+  <br>
+  <div class="box2">
+    B:
+    <input type="number" name="B"> 
+  </div>
+  <br>
+-->
+ <!-- <div class="box3">
+    C:
+    <input type="number" name="C"> 
+  </div>
+  <br>
+  <div class="box4">
+    D:
+    <input type="number" name="D"> 
+  </div>
+  <br>
+    Total:
+    <span id="total"></span>
+-->
+
+
+    
+</ul>
+
+
+</form>  
+
+
+<script>
+
+	$(document).ready(function(){
+    $("h1").css("color" , "blue");
+    $(".input1").removeClass("");
+
+    $("nav").click(function(){
+    var num1 = $(".box1").val();
+    var num2 = $(".box2").val();
+    var sum = parseInt(num1) + parseInt(num2);
+    $("#total").val(sum);
+
+    
+  })
+
+
+
+  });
+
+</script>
+  
+</body> 
+</html> 

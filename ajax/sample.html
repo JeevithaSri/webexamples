@@ -1,0 +1,53 @@
+// to add the values in two input boxes
+
+<script>
+	$(document).ready(function(){
+
+		//iterate through each textboxes and add keyup
+		//handler to trigger sum event
+		$(".txt").each(function() {
+
+			$(this).keyup(function(){
+				calculateSum();
+			});
+		});
+
+	});
+
+	function calculateSum() {
+
+		var sum = 0;
+		//iterate through each textboxes and add the values
+		$(".txt").each(function() {
+
+			//add only if the value is number
+			if(!isNaN(this.value) && this.value.length!=0) {
+				sum += parseFloat(this.value);
+			}
+
+		});
+		//.toFixed() method will roundoff the final sum to 2 decimal places
+		$("#sum").html(sum.toFixed(2));
+	}
+</script>
+
+
+/*
+
+$(document).ready(function(){
+      $("#calculate").click(function () {
+      var num1 = $("#num1").val();
+      var num2 = $("#num2").val();
+      var answer = parseInt(num1) + parseInt(num2);
+      alert(answer);
+      $("#answer").val(answer);
+    });
+  });
+
+
+  <input type="number" id="num1" class="form-control" placeholder="0">
+<input type="number" id="num2" class="form-control" placeholder="0">
+<input type="number" id="answer" class="form-control" placeholder="0" readonly>
+<button id="calculate" type="button">calculate</button>
+
+*/

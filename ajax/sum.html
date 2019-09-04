@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+		<style>
+			
+    body{
+      font-size: 200%;
+    }
+		</style>
+
+</head>
+
+<body>
+
+	Starting:
+	<input type="number" id="starting" class="form-control" placeholder="0">
+	Ending:
+	<input type="number" id="ending" class="form-control" placeholder="0">
+	Total:
+	<input type="number" id="total" class="form-control" placeholder="0" readonly>
+	<br>
+	<br>
+
+	Rate:
+	<input type="number" id="rate" class="form-control" placeholder="0" >
+	Batta:
+	<input type="number" id="batta" class="form-control" placeholder="0" >
+
+	Shift-Amt:
+	<input type="number" id="amount" class="form-control" placeholder="0" >
+	<br>
+	<br>
+
+	Bill:
+	<input type="number" id="bill" class="form-control" placeholder="0" readonly>
+	Advance:
+	<input type="number" id="advance" class="form-control" placeholder="0" >
+	Balance:
+	<input type="number" id="balance" class="form-control" placeholder="0" readonly>
+
+	<script>
+
+
+	$(document).ready(function(){
+      $(".form-control").keyup(function () {
+      var starting = $("#starting").val();
+      var ending = $("#ending").val();
+      var total = parseInt(ending) - parseInt(starting);
+      $("#total").val(total);
+      var rate = $("#rate").val();
+      var batta = $("#batta").val();
+      var amount = $("#amount").val();
+      var bill = parseInt(rate) + parseInt(batta) + parseInt(amount);
+      $("#bill").val(bill);
+      var advance = $("#advance").val();
+      var balance = parseInt(bill) - parseInt(advance);
+      $("#balance").val(balance);
+      
+
+      
+    });
+  });
+</script>
+</body>
+</html>
